@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vintage-paper: #f5f1e6;
+  --vintage-ink: #3a3226;
+  --vintage-paper-dark: #2a2520;
+  --vintage-ink-light: #e8e0d0;
+}
+
+body {
+  background-color: var(--vintage-paper);
+  color: var(--vintage-ink);
+  background-image: url("/paper-texture-light.png");
+  background-repeat: repeat;
+}
+
+.dark body {
+  background-color: var(--vintage-paper-dark);
+  color: var(--vintage-ink-light);
+  background-image: url("/paper-texture-dark.png");
+  background-repeat: repeat;
+}
+
+.bg-vintage-paper {
+  background-color: var(--vintage-paper);
+}
+
+.bg-vintage-paper-dark {
+  background-color: var(--vintage-paper-dark);
+}
+
+.text-vintage-ink {
+  color: var(--vintage-ink);
+}
+
+.text-vintage-ink-light {
+  color: var(--vintage-ink-light);
+}
+
+.bg-vintage-ink {
+  background-color: var(--vintage-ink);
+}
+
+.bg-vintage-ink-light {
+  background-color: var(--vintage-ink-light);
+}
+
+.text-vintage-paper {
+  color: var(--vintage-paper);
+}
+
+.text-vintage-paper-dark {
+  color: var(--vintage-paper-dark);
+}
+
+.vintage-heading {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.02em;
+}
+
+.vintage-frame {
+  position: relative;
+  border: 1px solid rgba(58, 50, 38, 0.3);
+  box-shadow: 0 4px 12px rgba(58, 50, 38, 0.1);
+  background-color: var(--vintage-paper);
+}
+
+.dark .vintage-frame {
+  border: 1px solid rgba(232, 224, 208, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: var(--vintage-paper-dark);
+}
+
+.vintage-frame::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid rgba(58, 50, 38, 0.2);
+  pointer-events: none;
+}
+
+.dark .vintage-frame::before {
+  border: 1px solid rgba(232, 224, 208, 0.2);
+}
+
+@media (hover: hover) {
+  .vintage-frame:hover {
+    box-shadow: 0 6px 16px rgba(58, 50, 38, 0.15);
+  }
+
+  .dark .vintage-frame:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-in-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-in-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-in-out forwards;
+}
+
+.animate-progress {
+  animation: progress 2s linear forwards;
+}
+
+.animate-loading-progress {
+  animation: loadingProgress 1.5s ease-in-out infinite;
+}
+
+.delay-150 {
+  animation-delay: 150ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes loadingProgress {
+  0% {
+    width: 0%;
+    margin-left: 0;
+  }
+  50% {
+    width: 100%;
+    margin-left: 0;
+  }
+  100% {
+    width: 0%;
+    margin-left: 100%;
+  }
+}
+
+/* Welcome Screen Animations */
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hide scrollbar but allow scrolling */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
